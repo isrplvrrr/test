@@ -11,6 +11,10 @@ class Delivery extends StatefulWidget {
 class _DeliveryState extends State<Delivery> {
   @override
   Widget build(BuildContext context) {
+    final TextEditingController adressController = TextEditingController();
+    final TextEditingController numberController = TextEditingController();
+    final TextEditingController commentController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -45,8 +49,8 @@ class _DeliveryState extends State<Delivery> {
                           height: 35,
                           width: 300,
                           child: TextField(
+                            controller: adressController,
                             decoration: InputDecoration(
-                              // hintText: hintText, // Подсказка внутри поля ввода
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25.0),
                                 borderSide: BorderSide.none,
@@ -87,8 +91,8 @@ class _DeliveryState extends State<Delivery> {
                           height: 35,
                           width: 300,
                           child: TextField(
+                            controller: numberController,
                             decoration: InputDecoration(
-                              // hintText: hintText, // Подсказка внутри поля ввода
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25.0),
                                 borderSide: BorderSide.none,
@@ -129,8 +133,8 @@ class _DeliveryState extends State<Delivery> {
                           height: 35,
                           width: 300,
                           child: TextField(
+                            controller: commentController,
                             decoration: InputDecoration(
-                              // hintText: hintText, // Подсказка внутри поля ввода
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25.0),
                                 borderSide: BorderSide.none,
@@ -150,6 +154,32 @@ class _DeliveryState extends State<Delivery> {
                 ),
               ),
             ],
+          ),
+          Expanded(
+            child: Padding(padding: EdgeInsets.symmetric(vertical: 170)),
+          ),
+          TextButton(
+            onPressed: () {
+              if (adressController.text.isNotEmpty &&
+                  numberController.text.isNotEmpty &&
+                  commentController.text.isNotEmpty) {
+                Navigator.of(context).pushNamed('/succesfull');
+              }
+              setState(() {});
+            },
+            style: ElevatedButton.styleFrom(
+              fixedSize: Size(350, 4),
+              backgroundColor: Color(0xFF427A5B),
+              foregroundColor: Colors.white,
+            ),
+            child: Text(
+              'Заказать',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 17,
+                fontStyle: FontStyle.normal,
+              ),
+            ),
           ),
         ],
       ),

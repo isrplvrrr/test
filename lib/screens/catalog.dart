@@ -16,23 +16,10 @@ class Catalog extends StatefulWidget {
 }
 
 class _CatalogState extends State<Catalog> {
-  int _counter = 0;
-
-  void counterAdd() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void counterDelete() {
-    setState(() {
-      _counter--;
-      _counter > 0;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    box.length >= 0;
+
     return Scaffold(
       backgroundColor: Color(0xFFF2F8F4),
       appBar: AppBar(
@@ -345,16 +332,29 @@ class _CatalogState extends State<Catalog> {
                             ),
                             IconButton(
                               onPressed: () {
-                                counterDelete();
+                                if (box.length > 0) {
+                                  box.deleteAt(0);
+                                  setState(() {});
+                                }
                               },
                               icon: SvgPicture.asset(
                                 'assets/icons/delete_icon.svg',
                               ),
                             ),
-                            Text('${_counter}'),
+                            Text('${box.length}'),
                             IconButton(
                               onPressed: () {
-                                counterAdd();
+                                box.add(
+                                  Selderey(
+                                    isBought: true,
+                                    name: '        ЛЮПИН \n МНОГОЛЕТНИЙ',
+                                    specialization: 'Растения',
+                                    id: 2,
+                                    image: 'assets/images/image_4.png',
+                                    price: 349,
+                                  ),
+                                );
+                                setState(() {});
                               },
                               icon: SvgPicture.asset(
                                 'assets/icons/add_icon.svg',

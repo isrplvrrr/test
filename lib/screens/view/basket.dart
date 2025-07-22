@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:testing_project/database/database.dart';
 import 'package:testing_project/database/product.dart';
-import 'package:testing_project/hive_adapter/hive_adapter.dart';
 
 // ignore: must_be_immutable
 class Basket extends StatefulWidget {

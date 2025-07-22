@@ -1,5 +1,4 @@
 import 'package:hive/hive.dart';
-import 'package:testing_project/database/database.dart';
 part 'hive_adapter.g.dart';
 
 @HiveType(typeId: 0)
