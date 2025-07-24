@@ -11,8 +11,10 @@ import 'package:testing_project/screens/view/categories.dart';
 import 'package:testing_project/screens/view/delivery.dart';
 import 'package:testing_project/screens/view/details.dart';
 import 'package:testing_project/screens/on_boarding_screen.dart';
+import 'package:testing_project/screens/view/details_lupin.dart';
 import 'package:testing_project/screens/view/pickup.dart';
 import 'package:testing_project/screens/view/succesfull.dart';
+import 'package:testing_project/screens/view/succesfull_pickup.dart';
 
 int? initScreen;
 void main() async {
@@ -46,6 +48,8 @@ class MyApp extends StatelessWidget {
         '/pickup': (context) => Pickup(),
         '/categories': (context) => Categories(),
         '/succesfull': (context) => Succesfull(),
+        '/succesfullPickup': (context) => SuccesfullPickup(),
+        '/detailsLupin': (context) => DetailsLupin(),
       },
       initialRoute: initScreen == 0 || initScreen == null
           ? '/catalog'

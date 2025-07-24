@@ -177,7 +177,11 @@ class _CatalogState extends State<Catalog> {
                                   100,
                                 ),
                                 child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(
+                                      context,
+                                    ).pushNamed('/detailsLupin');
+                                  },
                                   style: ElevatedButton.styleFrom(
                                     fixedSize: Size(150, 10),
                                     backgroundColor: Color(0xFF427A5B),
@@ -365,7 +369,9 @@ class _CatalogState extends State<Catalog> {
                         ClipRRect(
                           borderRadius: BorderRadiusGeometry.circular(90),
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/detailsLupin');
+                            },
                             style: ElevatedButton.styleFrom(
                               fixedSize: Size(150, 10),
                               backgroundColor: Color(0xFF427A5B),
